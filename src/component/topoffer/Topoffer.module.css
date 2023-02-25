@@ -1,0 +1,26 @@
+.top_image1
+{
+    width: 100%;
+    height: 30rem;
+    
+}
+.top_image2
+{
+    width: 100%; 
+}
+.top_offer_card
+{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* top offer2 */
+.last_block_ha
+{
+    display: flex;
+    flex-wrap: wrap;
+    width: 99%;
+    margin-left: 0.5%;
+    gap:1%;
+}

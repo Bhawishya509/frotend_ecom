@@ -1,0 +1,21 @@
+.about {
+    min-height: 100vh;
+    
+    padding: 100px 50px 50px 50px;
+    background: black;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+ 
+  
+  @media (max-width: 500px) {
+    .videos::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .Contact_photo1
+  {
+    width: 100%;
+    background-position: center;
+    margin-top: 0.6%;
+  }

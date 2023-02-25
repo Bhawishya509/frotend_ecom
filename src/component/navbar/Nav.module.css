@@ -1,0 +1,42 @@
+.main_navbar_block
+{
+    /* background-color: rgb(33, 24, 24); */
+}
+.navlist
+{
+    font-weight: 700 !important;
+}
+.search_main_block
+{
+    margin-right: 2%;
+
+}
+.Nav_cartblock__viuW4
+{
+    position: relative;
+}
+
+.cartblock
+{
+    font-weight: 700 !important;
+    position: relative;
+  
+    
+    
+}
+.cartblock_value
+{
+    position: absolute;
+   
+    color: red;
+    padding-bottom: 10px;
+   margin-top: 60%;
+   padding-top: 40vh;
+   box-sizing: border-box;
+}
+.login_btn
+{
+    margin-left: 2%;
+    margin-right: 1%;
+    font-weight: 700 !important;
+}

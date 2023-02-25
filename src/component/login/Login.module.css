@@ -1,0 +1,15 @@
+.main_head_block
+{
+    margin-top: 5%;
+    
+}
+.image_and_login_main_block
+{
+    display: flex;
+}
+.image1
+{
+    width: 50%;
+    height: 30rem;
+    background-color: #2874F0;
+}

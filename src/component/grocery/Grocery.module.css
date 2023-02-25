@@ -1,0 +1,73 @@
+.image1
+{
+    width: 100%;
+    margin-top: 0.5%;
+    box-shadow: 0px 0px 2px 2px rgb(193, 193, 193);
+}
+.main_crusal_block
+{
+
+    margin-top: 1%;
+    width: 99%;
+    margin-left: 0.5%;
+    padding-right: 1.2%;
+    box-shadow: 0px 0px 2px 2px rgb(193, 193, 193);
+}
+.second_image_block
+{
+    width: 99%;
+    margin-left: 0.5%;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
+    justify-content: center;
+    margin-top: 1%;
+    box-shadow: 0px 0px 4px 2px rgb(193, 193, 193);
+    padding:1%;
+    align-items: center;
+}
+.second_image_block1
+{
+    width: 18rem;
+    margin-left: 1%;
+   
+    box-shadow: 0px 0px 2px 2px rgb(193, 193, 193);
+    border-radius: 4px;
+    
+
+}
+.second_image_block1:hover
+{
+    opacity: 0.6;
+}
+.cr2main_block
+{
+    margin-left: 1%;
+    margin-top: 1%;
+}
+.cr2main_block:hover
+{
+    transform: scale(1.1);
+}
+.image2_main_block
+{
+    width: 99%;
+    margin-left: 0.5%;
+    display: flex;
+    flex-wrap: wrap;
+    
+    gap: 1%;
+    justify-content: center;
+    
+}
+.image2_main_block_image
+{
+    margin-top: 1%;
+    width: 49.40%;
+    box-shadow: 0px 0px 2px 2px rgb(193, 193, 193);
+}
+.image2_main_block_image:hover
+{
+    opacity: 0.6;
+}

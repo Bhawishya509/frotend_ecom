@@ -1,0 +1,86 @@
+.heading
+{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6%;
+    margin-top: 0.2%;
+}
+.photo_cover
+{
+    margin-top: 0.6%;
+}
+.img_text_main_block
+{
+    height: 16rem;
+    width: 32%;
+    border-radius: 4px;
+    margin-top: 1%;
+    background-color :rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 2px 2px rgb(195, 197, 200);
+    padding-left: 0.5%;
+    padding-right: 0.5;
+
+
+}
+.img_text_main_block:hover
+{
+    opacity: 0.5;
+    
+}
+
+.img_text_block
+{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    height: 98%;
+    justify-content: center;
+    align-items: center;
+}
+.heading1
+{
+    color: #6a696d;
+    font-size: 1rem;
+    font-weight: 600;
+
+}
+.heading2
+{
+    color: black;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+.image
+{
+    width: 48%;
+    height: 80%;
+    border-radius: 4px;
+    background-color: red;
+}
+.img2
+{
+    margin-top: 0.7%;
+    width: 99%;
+    margin-left: 0.55%;
+  
+
+}
+.lastimage
+{
+    height: 16rem;
+    width: 97.54%;
+    background-color: red;
+    margin-top: 0.6%;
+    margin-left: 1.2%;
+
+}
+.Carusal_image
+{
+    height: 20rem;
+    width: 100%;
+}

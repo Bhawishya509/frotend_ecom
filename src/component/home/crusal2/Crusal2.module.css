@@ -1,0 +1,85 @@
+.main_crusal2block
+{
+    box-shadow: 0px 0px 1px 2px rgb(227, 227, 227);
+    margin-top: 2.5%;
+    height: 20rem;
+    width: 99%;
+  background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.50%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+
+
+
+}
+.btn_heading_block
+{
+   border-bottom: 0.5px soild rgb(120, 117, 117);
+    height: 20%;
+    width: 100%;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2%;
+    padding-right: 2%;
+    align-items: center;
+
+    
+
+}
+.react-multi-carousel-item 
+{
+    width: 10% !important;
+}
+.cr2main_block
+{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+    /* margin-bottom: 2%; */
+   height: 100%;
+    margin-top: 1.5%;
+   
+    justify-content: space-between;
+    padding-top: 1%;
+
+
+
+
+}
+
+
+.imageclass2
+{
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ width: 9rem;
+ height: 9rem;
+ border-radius: 2px;
+}
+.imageclass2:hover
+{
+  transform:scale(1.1);
+}
+.title1
+{
+    font-weight: 600;
+    
+}
+.title2
+{
+    color:rgb(83, 86, 83);
+    font-weight: 600;
+}
+.title3
+{
+    color:rgb(83, 86, 83);
+    margin-bottom: 2.5%;
+    font-weight: 600;
+
+}
