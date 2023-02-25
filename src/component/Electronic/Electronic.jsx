@@ -25,9 +25,9 @@ const Electronic = () => {
   const [ele3data, setele3data] = useState();
   useEffect(() => {
     const getdata = async () => {
-      let res1 = await axios.get("http://localhost:8000/Electronics");
-      let res2 = await axios.get("http://localhost:8000/Electronicspr2");
-      let res3 = await axios.get("http://localhost:8000/Electronicpr3");
+      let res1 = await axios.get("https://mern-stacks-p1by.onrender.com/Electronics");
+      let res2 = await axios.get("https://mern-stacks-p1by.onrender.com/Electronicspr2");
+      let res3 = await axios.get("https://mern-stacks-p1by.onrender.com/Electronicpr3");
 
       setdata([res1.data].flat());
       setele2data([res2.data].flat(Infinity));
