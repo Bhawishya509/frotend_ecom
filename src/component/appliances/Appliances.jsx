@@ -11,8 +11,8 @@ const Appliances = () => {
   const [product2, setProduct2] = useState();
   useEffect(() => {
     const fun = async () => {
-      const response1 = await axios.get("http://localhost:8000/appliancesproduct");
-      const response2 = await axios.get("http://localhost:8000/Electronicpr3");
+      const response1 = await axios.get("https://mern-stacks-p1by.onrender.com/appliancesproduct");
+      const response2 = await axios.get("https://mern-stacks-p1by.onrender.com/Electronicpr3");
       setProduct1([response1.data]);
       setProduct2([response2.data]);
     };
