@@ -3,8 +3,15 @@ import React,{useState,useEffect} from "react";
 import axios from "axios";
 import mbcs from "./Mobile.module.css";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+import { useNavigate } from "react-router-dom";
+import {  useSelector } from 'react-redux'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 const MobileItems = () => {
   const [datas,setdata]=useState()
+  const navi=useNavigate();
+const checking = useSelector((state) => state.counter.value1)
+const notify = () => toast("Item add to card successfully!");
   useEffect(()=>
   {
     const getdata=async()=>
@@ -32,7 +39,6 @@ const MobileItems = () => {
             />
             <div className={mbcs.image_text}>
              {datass.name}
-              <div className={mbcs.freedomsale}>{datass.freedom}</div>
               <div className={mbcs.mobile_prize}>
                 <span style={{ color: "#FF8C2A",fontSize:"1.4rem" }} >
                 <sup><CurrencyRupeeIcon style={{fontSize:"1.5rem"}}/></sup></span>{datass.prize}
@@ -44,6 +50,21 @@ const MobileItems = () => {
                 {datass.delivery_date}
               </div>
             </div>
+            <button className={mbcs.add_button} onClick={()=>
+                {
+                checking? notify() :navi("/Login")
+                }}> add to cart </button>
+                <ToastContainer 
+          position="top-right"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"/>
           </div>
   
           )
