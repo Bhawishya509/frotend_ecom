@@ -20,11 +20,15 @@ import InputBase from "@mui/material/InputBase";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CameraRoundedIcon from "@mui/icons-material/CameraRounded";
-import {  useSelector } from 'react-redux'
+import {  useSelector,useDispatch } from 'react-redux'
+import { uncheck} from "../../app/counterSlice"
+import { ToastContainer, toast } from 'react-toastify';
 const drawerWidth = 240;
 const navItems = ["About", "Contact","Signup"];
 
 const Navs = (props) => {
+  const dispatch = useDispatch()
+  const notify = () => toast("Log out  successfully!")
   const checking = useSelector((state) => state.counter.value1)
   const {window}=props;
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -154,6 +158,7 @@ const Navs = (props) => {
               <Button sx={{ color: "#fff" }} className={ncs.navlist}
               onClick={()=>
               {
+                alert("")
                 navigate("/")
               }}
               >
@@ -204,13 +209,35 @@ const Navs = (props) => {
                 </div>
               </Button>
             </Box>
-            <Button sx={{ color: "#fff" }}>
-              <AccountCircle
-              onClick={()=>
+            <Button sx={{ color: "#fff" }}
+            
+            onClick={(e)=>
                 {
-                 checking?navigate("/Cart"):navigate("/Account")
-                }} />
+                
+                  notify()
+                  dispatch(uncheck())
+                  checking?navigate("/"):navigate("/Login")
+
+                }}
+            >
+            
+              <AccountCircle/>
+             
+
+               
+
             </Button>
+            <ToastContainer 
+          position="top-right"
+          autoClose={1500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"/>
           </Toolbar>
         </AppBar>
         <Box component="nav">

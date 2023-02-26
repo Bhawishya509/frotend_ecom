@@ -77,8 +77,10 @@ const Electronic = () => {
         <Footer />
       </>
     );
-  } else {
-    return 0;
+  } 
+  
+  else {
+    return "please wait...";
   }
 };
 

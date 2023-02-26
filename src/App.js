@@ -1,4 +1,4 @@
-import React from 'react'
+
  import Home from "./component/home/Home"
 import { BrowserRouter,Route,Routes } from "react-router-dom";
 import Topoffer from './component/topoffer/Topoffer';
@@ -15,7 +15,7 @@ import About from "./component/about/About"
 import Contact from "./component/contact/Contact"
 import Form2 from './component/register/Form2';
 import { useSelector} from 'react-redux'
-import Account from './component/Account/Account';
+// import Account from './component/Account/Account';
 import Cart from './component/cart/Cart';
 const App = () => {
   const checking = useSelector((state) => state.counter.value1)
@@ -40,10 +40,8 @@ const App = () => {
     <Route path="/Contact" element={<Contact/>}/>
     <Route path="/About" element={<About/>}/>
     <Route path='/Beauty-Toys-More' element={<Beauty/>}/>
-    {/*<Route path='/Login'  element={checking === false ? <Login   /> :" "}/>*/}
-    <Route path="/Login" element={<Login/>}/>
+    <Route path='/Login'  element={checking === false ? <Login   /> :"/"}/>
     <Route path="/Signup" element={<Form2/>}/>
-    <Route path="/Account" element={checking?<Account/>:<Login/>}/>
     <Route path="/Cart" element={checking?<Cart/>:<Login/>}/>
     <Route path="*" element={<Form2/>}/>
    
