@@ -8,9 +8,9 @@ import { Col } from "react-bootstrap";
 import swal from "sweetalert";
 import { Modal } from "react-bootstrap";
 import rgcs from "./register.module.css"
-import {db} from "../../Database";
-import { addDoc, collection } from "firebase/firestore";
-
+// import {db} from "../../Database";
+// import { addDoc, collection } from "firebase/firestore";
+import axios from "axios"
 const Form2 = () => {
 
   const navi=useNavigate();
@@ -27,7 +27,7 @@ const Form2 = () => {
   });
 
   
-  const createcollection =collection(db,"value");
+  // const createcollection =collection(db,"value");
 
   const change = (event) => {
     const { name, value } = event.target;
@@ -50,31 +50,31 @@ const Form2 = () => {
 
           // this will save in data base
           
-          const createuser=async ()=>
-          {
-            try{
-            await addDoc(createcollection,{firstname:value.first,surname:value.last,
-            email:value.email,password:value.password,zip:value.zip,state:value.state,city:value.city}).then((res)=>
-            {
-              swal("Registion Successfully", {
-                    icon: "success",
+          // const createuser=async ()=>
+          // {
+          //   try{
+          //   await addDoc(createcollection,{firstname:value.first,surname:value.last,
+          //   email:value.email,password:value.password,zip:value.zip,state:value.state,city:value.city}).then((res)=>
+          //   {
+          //     swal("Registion Successfully", {
+          //           icon: "success",
                     
-                  });
-                setTimeout(()=>
-                {
-                  navi("/");
-                },2000)
+          //         });
+          //       setTimeout(()=>
+          //       {
+          //         navi("/");
+          //       },2000)
               
-            })}
-            catch
-            {
-              swal("Registion Failed", {
-                      icon: "error"
-                    });
-            }
+          //   })}
+          //   catch
+          //   {
+          //     swal("Registion Failed", {
+          //             icon: "error"
+          //           });
+          //   }
             
 
-          }
+          // }
          
           
 
@@ -82,39 +82,46 @@ const Form2 = () => {
             event.preventDefault();
             event.stopPropagation();
 
-            createuser()
+            // createuser()
           
-               // axios
-              // .post("http://localhost:8000/reg", {
-              //   firstname: value.first,
-              //   surname: value.last,
-              //   email: value.email,
-              //   password: value.password,
-              //   zip: value.zip,
-              //   month: value.state,
-              //   city: value.city,
-              // })
-              // .then(function (response) {
+               axios
+              .post("http://localhost:8000/id_pass", {
+                firstname: value.first,
+                surname: value.last,
+                email: value.email,
+                password: value.password,
+                zip: value.zip,
+                month: value.state,
+                city: value.city,
+              })
+              .then(function (response) {
       
-              //   console.log(response.data)
-              //   if(response.data)
-                
-              //   swal("Registion Successfully", {
-              //     icon: "success",
+              
+                if (response.data !== "Sorry This Email Is Allready Present")
+                {
+                  swal("Registion Successfully", {
+                    icon: "success",
                   
-              //   });
-              //   else
-              //   {
-              //     swal("Registion Failed", {
-              //       icon: "error",
-              //     });
-              //   }
+                  }
                 
-              // })
-              // .catch(function (error) {
-              //   swal("Failed Not Connted In Data Base !", { icon: "error" });
-              //   console.log(error);
-              // });
+                  );
+                  setTimeout(() =>
+                  {
+                    navi("/");
+                  },2000)
+                }
+                else
+                {
+                  swal("Sorry This Email Is Allready Present", {
+                    icon: "warning",
+                  });
+                }
+                
+              })
+              .catch(function (error) {
+                swal("Failed Not Connted In Data Base !", { icon: "error" });
+                console.log(error);
+              });
 
 
 

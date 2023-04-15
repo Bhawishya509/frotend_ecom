@@ -9,18 +9,16 @@ import swal from "sweetalert";
 import { Modal } from "react-bootstrap";
 import Home from "../home/Home";
 import {  useDispatch,useSelector } from 'react-redux'
-import {  check, uncheck} from "../../app/counterSlice"
-import {db} from "../../Database"
-import {getDocs,collection} from  'firebase/firestore'
+import { check} from "../../app/counterSlice"
+import axios from "axios";
 const Login = ( ) => {
-  const dcol='value';
-    const refss=collection(db,dcol);
+
   const dispatch = useDispatch()
   const checking = useSelector((state) => state.counter.value1)
   const navi=useNavigate();
   const [validated, setValidated] = useState(false);
   const [show, setShow] = useState(true);
-  const [check_vaild,set_vaild]=useState([])
+  // const [check_vaild,set_vaild]=useState([])
   const [value, changevalue] = useState({
   
     email: "",
@@ -52,38 +50,33 @@ const Login = ( ) => {
           
 
           if (form.checkValidity() === true ) {
-            // console.log(check_vaild)
-            event.preventDefault();
-            
-            event.stopPropagation();
-           let minorcheck=false;
-            check_vaild.forEach((items)=>
-            {
-             
-              if(items.email===value.email && items.password===value.password)
-              {
-
-                console.log(items)
-                    swal("Login successfull", {
-                    icon: "success",
+             axios
+              .post("http://localhost:8000/login", {
+              
+                email: value.email,
+                password: value.password,
+               
+              })
+              .then(function (response) {
+                if(response.data.length )
+                {
+                swal("Login successfull", {
+                  icon: "success",
                 })
                 dispatch(check())
-                minorcheck=true;
-
-                setTimeout(()=>
-                {
-                  navi("/")
-                },2000)
-              }
-            })
-
-            if(minorcheck===false)
-            {
-              swal("Data Do'nt Match", {
+                navi("/")
+                }
+                else swal("Data Donot Match", {
                   icon: "error",
                 });
-                dispatch(uncheck())
-            }
+              
+              })
+              .catch(function (error) {
+                swal("Failed Not Connted In Data Base !", { icon: "error" });
+            
+              });
+
+
           }
         } 
       });
@@ -107,15 +100,8 @@ const Login = ( ) => {
   useEffect(() => {
 
 
-    const betu=async ()=>
-        {
-            let kk=await getDocs(refss);
-           let c=kk.docs.map((doc)=>({...doc.data()}));
-           set_vaild([...c])
-        }
-        betu()
 
-  }, [show])
+  }, [])
   
   return (
     <>

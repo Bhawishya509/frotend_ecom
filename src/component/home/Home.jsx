@@ -9,7 +9,6 @@ import Footer from "../footer/Footer";
 import axios from "axios";
 
 const Home = () => {
-  console.log("hiiiii dolly")
   const [product1, setProduct1] = useState();
   const crusaldata = [
     

@@ -40,7 +40,7 @@ const App = () => {
     <Route path="/Contact" element={<Contact/>}/>
     <Route path="/About" element={<About/>}/>
     <Route path='/Beauty-Toys-More' element={<Beauty/>}/>
-    <Route path='/Login'  element={checking === false ? <Login   /> :"/"}/>
+    <Route path='/Login'  element={checking === false ? <Login /> : <Home/>}/>
     <Route path="/Signup" element={<Form2/>}/>
     <Route path="/Cart" element={checking?<Cart/>:<Login/>}/>
     <Route path="*" element={<Form2/>}/>

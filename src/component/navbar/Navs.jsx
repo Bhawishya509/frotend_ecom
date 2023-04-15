@@ -16,6 +16,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { styled, alpha } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
+import Badge from '@mui/material/Badge';
 import InputBase from "@mui/material/InputBase";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -199,13 +200,15 @@ const Navs = (props) => {
                 onClick={()=>
                 {
                  checking?navigate("/Cart"):navigate("/Login")
-                }}>
+                  }}>
+                  <Badge badgeContent={4} color="success">
                   <ShoppingCartIcon style={{ position: "relative" }}
                   onClick={()=>
                 {
                  checking?navigate("/Cart"):navigate("/Login")
-                }} />
-                  cart
+                      }} />
+                      </Badge>
+                  
                 </div>
               </Button>
             </Box>
