@@ -85,7 +85,7 @@ const Form2 = () => {
             // createuser()
           
                axios
-              .post("http://localhost:8000/id_pass", {
+              .post("https://mern-stacks-p1by.onrender.com/id_pass", {
                 firstname: value.first,
                 surname: value.last,
                 email: value.email,
