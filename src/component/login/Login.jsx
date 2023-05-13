@@ -12,7 +12,9 @@ import {  useDispatch,useSelector } from 'react-redux'
 import { check} from "../../app/counterSlice"
 import axios from "axios";
 const Login = ( ) => {
-
+ // let rgx2=/((?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$)/
+  // for checking pattern ea kaam aayga jb backend may pass check karana 
+  // if(str.password.length>=8 && rgx2.test(str.password) )
   const dispatch = useDispatch()
   const checking = useSelector((state) => state.counter.value1)
   const navi=useNavigate();
