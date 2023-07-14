@@ -201,7 +201,7 @@ const Navs = (props) => {
                 {
                  checking?navigate("/Cart"):navigate("/Login")
                   }}>
-                  <Badge badgeContent={4} color="success">
+                  <Badge badgeContent={0} color="success">
                   <ShoppingCartIcon style={{ position: "relative" }}
                   onClick={()=>
                 {
